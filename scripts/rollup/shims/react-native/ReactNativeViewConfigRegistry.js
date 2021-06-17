@@ -8,7 +8,6 @@
  * @flow strict-local
  */
 
-/* eslint-disable react-internal/invariant-args */
 
 'use strict';
 

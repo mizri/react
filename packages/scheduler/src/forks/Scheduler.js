@@ -602,6 +602,19 @@ export {
   forceFrameRate as unstable_forceFrameRate,
 };
 
+// 增加以下配置
+export {
+  unstable_flushAllWithoutAsserting,
+  unstable_flushNumberOfYields,
+  unstable_flushExpired,
+  unstable_clearYields,
+  unstable_flushUntilNextPaint,
+  unstable_flushAll,
+  unstable_yieldValue,
+  unstable_advanceTime,
+  reset,
+} from './SchedulerMock';
+
 export const unstable_Profiling = enableProfiling
   ? {
       startLoggingProfilingEvents,

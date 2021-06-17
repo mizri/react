@@ -11,8 +11,8 @@ const OFF = 0;
 const ERROR = 2;
 
 module.exports = {
-  extends: ['fbjs', 'prettier'],
-
+  // extends: ['fbjs', 'prettier'],
+  
   // Stop ESLint from looking for a configuration file in parent folders
   root: true,
 
@@ -21,7 +21,7 @@ module.exports = {
     'no-for-of-loops',
     'no-function-declare-after-return',
     'react',
-    'react-internal',
+    // 'react-internal',
   ],
 
   parser: 'babel-eslint',
@@ -107,19 +107,19 @@ module.exports = {
 
     // CUSTOM RULES
     // the second argument of warning/invariant should be a literal string
-    'react-internal/no-primitive-constructors': ERROR,
-    'react-internal/no-to-warn-dev-within-to-throw': ERROR,
-    'react-internal/invariant-args': ERROR,
-    'react-internal/warning-args': ERROR,
-    'react-internal/no-production-logging': ERROR,
-    'react-internal/no-cross-fork-imports': ERROR,
-    'react-internal/no-cross-fork-types': [
-      ERROR,
-      {
-        old: [],
-        new: [],
-      },
-    ],
+    // 'react-internal/no-primitive-constructors': ERROR,
+    // 'react-internal/no-to-warn-dev-within-to-throw': ERROR,
+    // 'react-internal/invariant-args': ERROR,
+    // 'react-internal/warning-args': ERROR,
+    // 'react-internal/no-production-logging': ERROR,
+    // 'react-internal/no-cross-fork-imports': ERROR,
+    // 'react-internal/no-cross-fork-types': [
+    //   ERROR,
+    //   {
+    //     old: [],
+    //     new: [],
+    //   },
+    // ],
   },
 
   overrides: [
@@ -170,8 +170,8 @@ module.exports = {
         'packages/react-devtools*/**/*.js',
       ],
       rules: {
-        'react-internal/no-production-logging': OFF,
-        'react-internal/warning-args': OFF,
+        // 'react-internal/no-production-logging': OFF,
+        // 'react-internal/warning-args': OFF,
 
         // Disable accessibility checks
         'jsx-a11y/aria-role': OFF,
