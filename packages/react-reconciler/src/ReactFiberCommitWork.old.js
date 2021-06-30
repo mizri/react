@@ -2069,7 +2069,6 @@ function commitMutationEffects_begin(root: FiberRoot) {
         }
       }
     }
-
     const child = fiber.child;
     if ((fiber.subtreeFlags & MutationMask) !== NoFlags && child !== null) {
       ensureCorrectReturnPointer(child, fiber);
@@ -2097,7 +2096,6 @@ function commitMutationEffects_complete(root: FiberRoot) {
       nextEffect = sibling;
       return;
     }
-
     nextEffect = fiber.return;
   }
 }
@@ -2108,7 +2106,7 @@ function commitMutationEffectsOnFiber(finishedWork: Fiber, root: FiberRoot) {
   if (flags & ContentReset) {
     commitResetTextContent(finishedWork);
   }
-
+  
   if (flags & Ref) {
     const current = finishedWork.alternate;
     if (current !== null) {

@@ -171,18 +171,18 @@ const Internals = {
 
 export {
   createPortal,
-  batchedUpdates as unstable_batchedUpdates,
+  batchedUpdates as unstable_batchedUpdates, // 批量更新
   flushSync,
   Internals as __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
-  ReactVersion as version,
+  ReactVersion as version, // react版本
   // Disabled behind disableLegacyReactDOMAPIs
-  findDOMNode,
-  hydrate,
-  render,
-  unmountComponentAtNode,
+  findDOMNode, // 找到DOM节点
+  hydrate,// 服务端渲染使用
+  render, // 同步渲染
+  unmountComponentAtNode, // 卸载react节点
   // exposeConcurrentModeAPIs
-  createRoot,
-  hydrateRoot,
+  createRoot, // 异步渲染
+  hydrateRoot, // 服务端异步渲染
   flushControlled as unstable_flushControlled,
   scheduleHydration as unstable_scheduleHydration,
   // Disabled behind disableUnstableRenderSubtreeIntoContainer

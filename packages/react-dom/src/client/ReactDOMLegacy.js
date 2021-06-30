@@ -156,11 +156,14 @@ function legacyRenderSubtreeIntoContainer(
     topLevelUpdateWarnings(container);
     warnOnInvalidCallback(callback === undefined ? null : callback, 'render');
   }
-
-  let root = container._reactRootContainer;
+  // react渲染根节点
+  let root = container.root;
   let fiberRoot: FiberRoot;
+  // 如果真实dom上存在_reactRootContainer
   if (!root) {
     // Initial mount
+    // 第一次渲染，真实DOM节点添加属性_reactRootContainer
+    // 创建root节点
     root = container._reactRootContainer = legacyCreateRootFromDOMContainer(
       container,
       forceHydrate,
@@ -238,6 +241,7 @@ export function hydrate(
     );
   }
 
+  // 判断dom首付是一个真实dom节点
   invariant(
     isValidContainerLegacy(container),
     'Target container is not a DOM element.',
@@ -265,9 +269,9 @@ export function hydrate(
 }
 
 export function render(
-  element: React$Element<any>,
-  container: Container,
-  callback: ?Function,
+  element: React$Element<any>, // react组件，即实例化过后的react组件
+  container: Container, // 真实的DOM节点
+  callback: ?Function, // 可选的回调函数
 ) {
   if (__DEV__) {
     console.error(

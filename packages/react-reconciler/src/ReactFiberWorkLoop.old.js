@@ -521,7 +521,6 @@ export function scheduleUpdateOnFiber(
       markRootSuspended(root, workInProgressRootRenderLanes);
     }
   }
-
   if (lane === SyncLane) {
     if (
       // Check if we're inside unbatchedUpdates
@@ -1011,7 +1010,6 @@ function performSyncWorkOnRoot(root) {
   root.finishedWork = finishedWork;
   root.finishedLanes = lanes;
   commitRoot(root);
-
   // Before exiting, make sure there's a callback scheduled for the next
   // pending level.
   ensureRootIsScheduled(root, now());
@@ -1772,7 +1770,6 @@ function commitRootImpl(root, renderPriorityLevel) {
   // pending time is whatever is left on the root fiber.
   let remainingLanes = mergeLanes(finishedWork.lanes, finishedWork.childLanes);
   markRootFinished(root, remainingLanes);
-
   if (root === workInProgressRoot) {
     // We can reset these now that they are finished.
     workInProgressRoot = null;
@@ -1851,7 +1848,7 @@ function commitRootImpl(root, renderPriorityLevel) {
       // Updates scheduled during ref detachment should also be flagged.
       rootCommittingMutationOrLayoutEffects = root;
     }
-
+    
     // The next phase is the mutation phase, where we mutate the host tree.
     commitMutationEffects(root, finishedWork, lanes);
 

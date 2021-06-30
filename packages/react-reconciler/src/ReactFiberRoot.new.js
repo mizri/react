@@ -130,7 +130,6 @@ export function createFiberRoot(
     };
     uninitializedFiber.memoizedState = initialState;
   }
-
   initializeUpdateQueue(uninitializedFiber);
 
   return root;

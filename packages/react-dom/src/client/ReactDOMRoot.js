@@ -232,6 +232,7 @@ export function isValidContainer(node: any): boolean {
 
 // TODO: Remove this function which also includes comment nodes.
 // We only use it in places that are currently more relaxed.
+// 判断node是否是一个真实的DOM节点
 export function isValidContainerLegacy(node: any): boolean {
   return !!(
     node &&
